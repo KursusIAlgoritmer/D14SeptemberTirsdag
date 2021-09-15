@@ -18,20 +18,33 @@ public class TestLinkedList{
         LinkedList linkedList = new LinkedList();
         
         for(int i=0; i <10 ; i++){
-            linkedList.addItem(""+i);    
+			  
+           if(i==5) linkedList.addItem(""+29); else linkedList.addItem(""+i);     
         }
         
         linkedList.printList();
 		 
 		  String key = "4";
-		  System.out.println("Er key " + key + " i listen? svar=" + find(key,linkedList));
+		  System.out.println("Er key " + key + " i listen? svar= " + find(key,linkedList));
 		  key ="20";
-		  System.out.println("Er key " + key + " i listen? svar=" + find(key,linkedList));
+		  System.out.println("Er key " + key + " i listen? svar= " + find(key,linkedList));
 
+		  System.out.println("Hvad er det største tal i listen? svar= " + max(linkedList.getFirst()));
+		 
     }
 
-	 public static max(Node first){
-	   int max = 0; //assume all keys are positive integers 
+	 public static int max(Node first){
+	   int max = 0; //assume all keys are positive integers
+		Node n = first; 
+		while(n != null){
+		  int key = Integer.parseInt(n.item);
+		  if(key > max){
+		      max = key;
+		  }
+		  n = n.next;
+		}
+		return max;
+		 
 	 }
     
     public static boolean find(String key, LinkedList list){
