@@ -1,4 +1,4 @@
-public class TestLinkedListRemove{
+public class TestLinkedList_1_3_19_and_1_3_20{
 
   public Node first;
 
